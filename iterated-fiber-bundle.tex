@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\title{Constructing an Iterated Fibre Bundle: A Simple Example}
+\author{}
+\date{}
+\maketitle
+
+\section*{Introduction}
+This document demonstrates the explicit construction of an iterated fibre bundle through a simple example. The goal is to construct a two-layer fibre bundle where the base space of the first fibre bundle serves as the total space of the second.
+
+\section*{Construction of the Iterated Fibre Bundle}
+
+We construct the iterated fibre bundle in the following steps:
+
+\subsection*{Step 1: Define the First Fibre Bundle}
+Choose the base space $B = S^1$ (a circle).
+Let the fibre $F_1 = S^1$.
+Define the total space $E_1 = S^1 \times S^1$, which is a torus $T^2$.
+Define the projection map $\pi_1: T^2 \to S^1$ as:
+  \[
+  \pi_1(\theta_1, \theta_2) = \theta_1,
+  \]
+  where $(\theta_1, \theta_2)$ are points on $T^2$.
+Check the fibre structure:
+  \begin{itemize}
+    \item For any $\theta_1 \in S^1$, the fibre is:
+      \[
+      \pi_1^{-1}(\theta_1) = \{\theta_1\} \times S^1,
+      \]
+      which is homeomorphic to $S^1$. Thus, $F_1 \to E_1 \to B$ forms a fibre bundle.
+  \end{itemize}
+
+\subsection*{Step 2: Define the Second Fibre Bundle}
+Let the total space of the first fibre bundle $E_1 = T^2$ serve as the base space for the second fibre bundle.
+Choose the fibre $F_2 = \mathbb{R}$.
+Define the total space $E_2 = T^2 \times \mathbb{R}$.
+Define the projection map $\pi_2: T^2 \times \mathbb{R} \to T^2$ as:
+  \[
+  \pi_2((\theta_1, \theta_2), r) = (\theta_1, \theta_2),
+  \]
+  where $((\theta_1, \theta_2), r)$ are points in $E_2$.
+Check the fibre structure:
+  \begin{itemize}
+    \item For any $(\theta_1, \theta_2) \in T^2$, the fibre is:
+      \[
+      \pi_2^{-1}((\theta_1, \theta_2)) = \{(\theta_1, \theta_2)\} \times \mathbb{R},
+      \]
+      which is homeomorphic to $\mathbb{R}$. Thus, $F_2 \to E_2 \to E_1$ forms a fibre bundle.
+  \end{itemize}
+
+\subsection*{Step 3: The Iterated Fibre Bundle}
+Combining the two layers of fibre bundles, we obtain the iterated fibre bundle:
+\[
+F_2 \to E_2 \to B,
+\]
+where $E_2 = T^2 \times \mathbb{R}$ is the total space, $B = S^1$ is the base space, and the final fibre is $F_2 = \mathbb{R}$.
+
+\section*{Verification}
+1. The first fibre bundle $F_1 \to E_1 \to B$ is valid because for each $\theta_1 \in S^1$, the fibre $\pi_1^{-1}(\theta_1) \cong S^1$ is a connected space.
+2. The second fibre bundle $F_2 \to E_2 \to E_1$ is valid because for each $(\theta_1, \theta_2) \in T^2$, the fibre $\pi_2^{-1}((\theta_1, \theta_2)) \cong \mathbb{R}$ is a trivial fibre.
+3. Since fibre bundles can be composed, the resulting iterated fibre bundle $F_2 \to E_2 \to B$ satisfies the definition.
+
+\section*{Conclusion}
+This construction explicitly demonstrates a simple example of an iterated fibre bundle, where $F_2 = \mathbb{R}$, $E_2 = T^2 \times \mathbb{R}$, and $B = S^1$.
+
+\end{document}
